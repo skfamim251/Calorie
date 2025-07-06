@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "calorie"
+version = "0.1.0"
+description = "A simple calorie tracking web app"
+authors = ["Sk <your.email@example.com>"]
+readme = "README.md"
+packages = [{ include = "calorie" }]
+
+[tool.poetry.dependencies]
+python = "^3.13"
+flask = "^2.3.0"
+
+[tool.poetry.scripts]
+start = "app:app"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
