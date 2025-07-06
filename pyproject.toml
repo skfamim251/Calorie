@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "calorie"
+name = "my_project"
 version = "0.1.0"
 description = "A simple calorie tracking web app"
 authors = ["Sk <your.email@example.com>"]
