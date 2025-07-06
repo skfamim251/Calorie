@@ -3,7 +3,6 @@ name = "calorie"
 version = "0.1.0"
 description = "A simple calorie tracking web app"
 authors = ["Sk <your.email@example.com>"]
-readme = "README.md"
 packages = [{ include = "calorie" }]
 
 [tool.poetry.dependencies]
