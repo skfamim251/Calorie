@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fitness AI Tracker</title>
+</head>
+<body>
+  <h1>Calories Burned Predictor</h1>
+  <form id="predictForm">
+    <label>Steps: <input type="number" id="steps" /></label><br/>
+    <label>Duration (min): <input type="number" id="duration" /></label><br/>
+    <label>Weight (kg): <input type="number" id="weight" /></label><br/>
+    <button type="submit">Predict</button>
+  </form>
+  <h2 id="result"></h2>
+
+  <script>
+    document.getElementById("predictForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const steps = parseInt(document.getElementById("steps").value);
+      const duration = parseInt(document.getElementById("duration").value);
+      const weight = parseFloat(document.getElementById("weight").value);
+
+      const res = await fetch("https://your-backend-url/predict", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ steps, duration, weight })
+      });
+
+      const data = await res.json();
+      document.getElementById("result").innerText = "Estimated Calories Burned: " + data.predicted_calories;
+    });
+  </script>
+</body>
+</html>
